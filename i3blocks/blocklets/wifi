@@ -1,0 +1,15 @@
+#!/bin/bash
+
+INTERFACE="wlp0s26u1u1"
+
+
+[[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo DWN && exit
+
+QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+
+
+echo $QUALITY% # full text
+echo $QUALITY% # short text
+#echo "#ebcb8b" # color
+
+

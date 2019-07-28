@@ -1,0 +1,19 @@
+#!/bin/bash
+# Gets battery percentage and charging status from acpi and echos for i3 blocks
+STATUS=`acpi -b`
+PERCENT=`echo $STATUS | awk '{ print $4 }' | tr -d ,`
+CHARGE=`echo $STATUS | awk '{ print $3 }' | tr -d ,`
+
+if [ $CHARGE == "Discharging" ]; then
+	STAT='↓'
+else
+	STAT='↑'
+fi
+
+if [ "<$PERCENT tr '%'" < 10 ]; then
+	dunstify "Plug in your charger!"
+fi
+
+echo $PERCENT $STAT #full
+echo $PERCENT $STAT #short
+echo "#AEA47F" #color

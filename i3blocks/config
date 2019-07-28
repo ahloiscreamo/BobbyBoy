@@ -1,0 +1,65 @@
+##############
+## DEFAULTS ##
+##############
+
+command=/usr/libexec/i3blocks/$BLOCK_NAME
+separator_block_width=25
+color=#F3F4F5
+markup=pango
+align=center
+color=#666666
+
+############
+## BLOCKS ##
+############
+
+[mediaplayer]
+command= ~/.config/i3blocks/blocklets/mediaplayer
+instance=mpd
+interval=5
+signal=10
+label=<span color='#F0719B'></span> 
+color=#EEFFFF
+
+[volume]
+command=bash ~/.config/i3blocks/blocklets/volume
+#label=VOL
+label=<span color='#5AF7B0'> </span>
+instance=Master
+#instance=PCM
+interval=once
+signal=10
+color=#EEFFFF
+
+[wifi]
+command=bash /home/ahloi/.config/i3blocks/blocklets/wifi
+#label=WIFI
+label=<span color='#FFA56B'>直</span> 
+interval=10
+color=#EEFFFF
+
+[memory]
+command=bash /home/ahloi/.config/i3blocks/blocklets/memory
+label=<span color='#57C7FF'></span>  
+interval=30
+color=#EEFFFF
+
+[calendar]
+command=bash /home/ahloi/.config/i3blocks/blocklets/calendar
+label=<span color='#C792EA'></span>  
+interval=1
+color=#EEFFFF
+
+[datetime]
+command=bash /home/ahloi/.config/i3blocks/blocklets/datetime
+label=<span color='#89DDFF'></span>  
+interval=5
+color=#EEFFFF
+
+[shutdown_menu]
+full_text=<span color='#DEE6E7'></span>   
+command=bash /home/ahloi/.config/i3blocks/blocklets/shutdown_menu
+color=#EEFFFF
+
+#[etc]
+#full_text=<>
