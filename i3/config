@@ -97,7 +97,7 @@ bindsym $mod+a focus parent
 bindsym $mod+n exec --no-startup-id flash_window
 
 # disable border
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border normal 0
 for_window [class="Firefox"] border pixel 0
 
 # Activate smart borders (always)
