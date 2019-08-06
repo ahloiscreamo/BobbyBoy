@@ -342,9 +342,9 @@ bar {
 		statusline #1E2541
 		# workspaces section
 	
-                 focused_workspace  #57C7FF #57C7FF #1E2541
+                 focused_workspace  #1E2541 #1E2541 #57C7FF
                  active_workspace   #1E2541 #1E2541 #57C7FF
-                 inactive_workspace #1E2541 #1E2541 #57C7FF
+                 inactive_workspace #1E2541 #1E2541 #EEFFFF
                  urgent_workspace   #57C7FF #57C7FF #ffffff
 			
     }
