@@ -6,7 +6,7 @@
     scrollbarcolor: #1E2541;
     foregroundcolor: #EEFFFF;
     foregroundcolorinverse: #1E2541;
-    selectioncolor: #57C7FF;
+    selectioncolor: #F0719B;
 
 
     font-size: 1px;
