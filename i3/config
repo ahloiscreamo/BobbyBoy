@@ -70,6 +70,16 @@ bindsym $mod+Control+j move down   30 px
 bindsym $mod+Control+k move up     30 px
 bindsym $mod+Control+l move right  30 px
 
+# Move in x and y at the same time by one pixel
+#bindsym $mod+Shift+Up move left 1 px, move up 1 px
+#bindsym $mod+Shift+Down move right 1 px, move down 1 px
+
+# Resize width and height at the same time (window expansion!)
+set $x_spd 30
+set $hx_spd 15
+bindsym $mod+Shift+Up resize shrink width $x_spd px or $x_spd ppt, resize shrink height $x_spd px or $x_spd ppt, move right $hx_spd px, move down $hx_spd px
+bindsym $mod+Shift+Down resize grow width $x_spd px or $x_spd ppt, resize grow height $x_spd px or $x_spd ppt, move left $hx_spd px, move up $hx_spd px
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -343,8 +353,7 @@ for_window [window_role="About"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="Authy"] floating enable
 for_window [class="Yad"] floating enable
-for_window [class="Sxiv"] floating enable, resize set 350px 440px
-for_window [class="Sxiv"] floating resize set 300 300
+for_window [class="Sxiv"] floating enable, resize set 349px 440px
 for_window [class="Zathura"] floating enable
 for_window [class="Gcolor3"] floating enable
 
@@ -376,12 +385,12 @@ bar {
     }
 }
 
-#exec --no-startup-id feh --bg-fill ~/Pictures/Manta.jpg
-exec --no-startup-id hsetroot -solid '#354274'
+exec --no-startup-id feh --bg-fill ~/Pictures/Manta.jpg
+#exec --no-startup-id hsetroot -solid '#354274'
 exec --no-startup-id xinput set-prop 14 "Device Enabled" 0
 exec --no-startup-id xinput set-prop 15 "Device Enabled" 0
 exec --no-startup-id unclutter
-exec --no-startup-id compton 
+#exec --no-startup-id compton 
 #exec_always --no-startup-id flashfocus
 #exec --no-startup-id wal -R
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
