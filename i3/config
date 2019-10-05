@@ -126,7 +126,7 @@ for_window [class="^.*"] border normal 0
 # Toggle title bar
 bindsym $mod+t border normal 0
 bindsym $mod+u border none
-bindsym $mod+y border pixel 4
+bindsym $mod+y border pixel 3
 #title_align center
 
 # Farge
@@ -353,7 +353,8 @@ for_window [window_role="About"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="Authy"] floating enable
 for_window [class="Yad"] floating enable
-for_window [class="Sxiv"] floating enable, resize set 349px 440px
+#for_window [class="Sxiv"] floating enable, resize set 349px 440px
+for_window [class="Sxiv"] floating enable
 for_window [class="Zathura"] floating enable
 for_window [class="Gcolor3"] floating enable
 
@@ -385,8 +386,8 @@ bar {
     }
 }
 
-exec --no-startup-id feh --bg-fill ~/Pictures/Manta.jpg
-#exec --no-startup-id hsetroot -solid '#354274'
+#exec --no-startup-id feh --bg-fill ~/Pictures/Manta.jpg
+exec --no-startup-id hsetroot -solid '#354274'
 exec --no-startup-id xinput set-prop 14 "Device Enabled" 0
 exec --no-startup-id xinput set-prop 15 "Device Enabled" 0
 exec --no-startup-id unclutter
