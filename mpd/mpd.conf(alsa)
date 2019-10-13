@@ -1,0 +1,59 @@
+#Alsa setup
+
+music_directory "/mnt/1b5e6c70-f3fa-4e88-a91e-d5d00e69ad54/Music/"
+playlist_directory "/mnt/1b5e6c70-f3fa-4e88-a91e-d5d00e69ad54/Music/"
+db_file "/home/ahloi/.mpd/mpd.db"
+log_file "/home/ahloi/.mpd/mpd.log"
+pid_file "/home/ahloi/.mpd/mpd.pid"
+state_file "/home/ahloi/.mpd/mpdstate"
+
+audio_output {
+        type          "alsa"
+        name          "DigiHug USB Audio"
+        device        "hw:1,0"
+        auto_resample "no"
+        auto_format   "no"
+        auto_channels "no"
+        mixer_type    "none"
+        replaygain    "off"
+        use_mmap      "yes"
+}
+
+audio_output {
+type "fifo"
+name "my_fifo"
+path "/tmp/mpd.fifo"
+format "44100:16:2"
+}
+
+bind_to_address "127.0.0.1"
+port "6600"
+
+# QOBUZ input plugin
+input {
+        enabled    "no"
+        plugin     "qobuz"
+#        app_id     "ID"
+#        app_secret "SECRET"
+#        username   "USERNAME"
+#        password   "PASSWORD"
+#        format_id  "N"
+}
+
+# TIDAL input plugin
+input {
+        enabled      "no"
+        plugin       "tidal"
+#        token        "TOKEN"
+#        username     "USERNAME"
+#        password     "PASSWORD"
+#        audioquality "Q"
+}
+
+# Wildmidi input plugin
+decoder {
+    plugin "wildmidi"
+    enabled "no"
+    config_file "/etc/timidity/timidity.cfg"
+}
+
